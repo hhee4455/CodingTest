@@ -1,5 +1,5 @@
 def solution(nums):
-    answer = len(set(nums))
-    if answer > len(nums) / 2:
-        return len(nums) / 2
-    return answer
+    get = len(nums)//2
+    nums_set = set(nums)
+    
+    return len(list(nums_set)) if get >= len(nums_set) else get
