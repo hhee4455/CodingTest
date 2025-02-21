@@ -1,10 +1,12 @@
 def solution(phone_book):
-    phone_dict = {phone: True for phone in phone_book}
-    for phone in phone_book:
+    answer = True
+    hash_map = {}
+    for phone_number in phone_book:
+        hash_map[phone_number] = 1
+    for phone_number in phone_book:
         temp = ""
-        for char in phone[:-1]:
-            temp += char
-            if temp in phone_dict:
-                return False
-
-    return True  
+        for number in phone_number:
+            temp += number
+            if temp in hash_map and temp != phone_number:
+                answer = False
+    return answer
